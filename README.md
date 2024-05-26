@@ -6,7 +6,7 @@ Streamlit-Dashboard erstellt von Paul Krawjewski und Jannis Pohl
 Um eine virtuelle Umgebung mit `venv` zu erstellen, folgen Sie den folgenden Schritten:
 
 1. Öffnen Sie die Befehlszeile oder das Terminal.
-2. Navigieren Sie zum Projektverzeichnis: `cd` /path/zum/projektverzeichnis
+2. Navigieren Sie zum Projektverzeichnis: `cd /path/zum/projektverzeichnis`
 
 3. Führen Sie den folgenden Befehl aus, um die virtuelle Umgebung zu erstellen: `python -m venv venv`.
 4. Aktivieren Sie die virtuelle Umgebung:
@@ -34,5 +34,6 @@ Dadurch wird Streamlit gestartet und die Anwendung in Ihrem Webbrowser geöffnet
 ## Navigation im Dashboard
 
 Das Dashboard ist in zwei Tabs unterteilt unter dem Reiter der CSV-Analyse können Anwender individuell die Daten abrufen und eingeben.
+
 Diese Layoutauswahl bietet dem Anwender bei der Benutzung die Möglichkeit nur die wichtigsten Informationen einzusehen.
 
