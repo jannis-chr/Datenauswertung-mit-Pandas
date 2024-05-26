@@ -33,4 +33,6 @@ Dadurch wird Streamlit gestartet und die Anwendung in Ihrem Webbrowser geöffnet
 
 ## Navigation im Dashboard
 
+Das Dashboard ist in zwei Tabs unterteilt unter dem Reiter der CSV-Analyse können Anwender individuell die Daten abrufen und eingeben.
+Diese Layoutauswahl bietet dem Anwender bei der Benutzung die Möglichkeit nur die wichtigsten Informationen einzusehen.
 
