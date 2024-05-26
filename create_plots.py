@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 
 
 def readCSV():
-    # Create DataFrame
+    # Auslesen der CSV-Datei
     # df = pd.read_csv(data, sep =";")
     df = pd.read_csv("activities/activity.csv", sep =",")
 
@@ -21,6 +21,7 @@ def readCSV():
     CalculatedPace = df["CalculatedPace"]
     return df
 
+#Abrufen der maximalen Leistung
 def dataAnalysis_max():
     df = readCSV()
     
@@ -29,40 +30,21 @@ def dataAnalysis_max():
     #print("Max PowerOriginal:", power_original_max)
 
     return power_original_max
+
+#Abrufen des Durchschnitts der Leistung
 def dataAnalysis_mean():
     df= readCSV()
     power_original_mean = df["PowerOriginal"].mean()
     power_original_mean = round(power_original_mean, 2)
     return power_original_mean
 
+#Erstellen des Plots
 def createFigure(max_heart_rate):
     df = readCSV()
     
     time = np.arange(len(df))  
     heart_rate = df["HeartRate"]  
     power_original = df["PowerOriginal"]  
-
-    # fig = px.line(df, x=time, y=[power_original, heart_rate])
-
-    # fig.update_traces(line_color='blue', name='Leistung', selector=dict(name='power_original'))
-    # fig.update_traces(line_color='red', name='Herzfrequenz', selector=dict(name='heart_rate'))
-    # fig.update_layout(yaxis_range=[0, power_original.max()])
-
-    # fig.update_layout(
-    #     xaxis_title='Time / s',
-    #     yaxis=dict(
-    #         title='Power / W',
-    #         titlefont=dict(color='blue'),
-    #         tickfont=dict(color='blue')
-    #     ),
-    #     yaxis2=dict(
-    #         title='heartrate / bpm',
-    #         titlefont=dict(color='red'),
-    #         tickfont=dict(color='red'),
-    #         overlaying='y',
-    #         side='right'
-    #     )
-    # )
 
     fig = go.Figure()
 
@@ -92,14 +74,11 @@ def createFigure(max_heart_rate):
         )
     )
 
-# limit power
-
-# max heart rate 
+#Erstellen der Zonen 
     max_heart_rate_graph = heart_rate.max()
     heart_rate_zones = [0.5 * max_heart_rate, 0.6 * max_heart_rate, 0.7 * max_heart_rate, 0.8 * max_heart_rate, 0.9*max_heart_rate, max_heart_rate]
     color = ['green', 'yellow', 'orange', 'red', 'purple']
 
-# Zonen
     zone_times = []
     for i in range(len(heart_rate_zones)-1):
         zone_time = ((heart_rate >= heart_rate_zones[i]) & (heart_rate < heart_rate_zones[i+1])).sum()
@@ -133,7 +112,7 @@ def createFigure(max_heart_rate):
     return fig
         
     
-# Zonen Zeit
+# Zonen Leistung
 def power_zonetime():
     df = readCSV()
     power_original = df["PowerOriginal"]
@@ -142,8 +121,7 @@ def power_zonetime():
     max_heart_rate = heart_rate.max()
     heart_rate_zones = [0.5 * max_heart_rate, 0.6 * max_heart_rate, 0.7 * max_heart_rate, 0.8 * max_heart_rate, 0.9*max_heart_rate, max_heart_rate]
     
-    # Wieviel in welche zone
-    
+
     zone_avg_power = []
     for i in range(len(heart_rate_zones)-1):
             zone_power = df[(heart_rate >= heart_rate_zones[i]) & (heart_rate < heart_rate_zones[i+1])]['PowerOriginal'].mean()
@@ -155,7 +133,7 @@ def power_zonetime():
         
   #      zone_avg_power.append(zone_power)
    # return zone_avg_power
-
+#Zonen Zeit
 def zone_time():
     df = readCSV()
     power_original = df["PowerOriginal"]
@@ -169,15 +147,4 @@ def zone_time():
         avg_zone_time.append(str(i+1) + " Zone " + str(zone_time) + "sec")
     return avg_zone_time
     
- #Wieviel in welche zone
-    
-
-#Plot anzeigen
-    # fig.show()
-    
-
-
-
-
-print(dataAnalysis_max())
-print(dataAnalysis_mean())
+ 

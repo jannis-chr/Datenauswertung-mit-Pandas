@@ -8,10 +8,10 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 
-# Inhalt für jeden Tab hinzufügen
+# Inhalt für Tab 1
 def tab1_content():
     
-    
+    #Patientenverzeichnis
     col1,col2 = st.columns([0.6,0.4], gap="small")
 
     with col1:
@@ -62,9 +62,7 @@ def tab2_content():
     st.write('Analyse Leistung und Herzfrequenz über die Zeit')
     with st.expander("HERZFREQUENZEINGABE"):
         input_max_heart_rate = st.number_input("Maximale Herzfrequenz", min_value=150, max_value=300, value=200, step=1)
-
-    #st.title("Power and Heart Rate Plot")
-    #st.write("Dies ist der Inhalt von Tab 1.")
+#input der Daten aus create_plots.py
     with st.expander("DATENANALYSE"):
         col1, col2, col3 = st.columns(3)
 
@@ -91,7 +89,7 @@ def tab2_content():
 },
     hide_index=True,
 )
-        with col3:
+        with col3:              #Zeit in den Zonen (layout)
             if st.button("Zeit verbracht in den Zonen in Sekunden"):
                 daten_timeinzones = cp.zone_time()
                 st.data_editor(
