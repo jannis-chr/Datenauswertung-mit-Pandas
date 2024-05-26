@@ -3,7 +3,7 @@ import json
 
 def get_person_list():
     # Opening JSON file
-    file = open("../data/person_db.json")
+    file = open("data/person_db.json")
     # Loading the JSON File in a dictionary
     person_data = json.load(file)
     Names = []
@@ -16,7 +16,7 @@ def get_person_list():
 
 def find_person_data_by_name(suchstring):
 
-    file = open("../data/person_db.json")
+    file = open("data/person_db.json")
     person_data = json.load(file)
     if suchstring == "None":
         return {}
