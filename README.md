@@ -1,5 +1,5 @@
 # Datenauswertung-mit-Pandas
-Streamlit-Dashboard erstellt von Paul Krawjewski und Jannis Pohl
+Streamlit-Dashboard erstellt von Paul Krajewski und Jannis Pohl
 
 ## Virtuelle Umgebung erstellen
 
