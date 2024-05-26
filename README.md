@@ -1,7 +1,5 @@
 # Datenauswertung-mit-Pandas
 Streamlit-Dashboard erstellt von Paul Krawjewski und Jannis Pohl
-# Datenauswertung-mit-Pandas
-Streamlit-Dashboard erstellt von Paul Krawjewski und Jannis Pohl
 
 ## Virtuelle Umgebung erstellen
 
@@ -32,3 +30,7 @@ Um die `main.py` Datei mit Streamlit zu starten, führen Sie die folgenden Schri
 2. Führen Sie den folgenden Befehl aus, um Streamlit zu starten: `streamlit run main.py`.
 
 Dadurch wird Streamlit gestartet und die Anwendung in Ihrem Webbrowser geöffnet.
+
+## Navigation im Dashboard
+
+
